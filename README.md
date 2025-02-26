@@ -1,36 +1,98 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# NASA Near Earth Objects Tracker
 
-## Getting Started
+A web application that displays Near Earth Objects (NEOs) using NASA's NeoWs API. The application shows potentially hazardous asteroids and their proximity to Earth through an interactive map and detailed information table.
 
-First, run the development server:
+![NASA NEO Tracker](./public/screenshot.png)
 
+## Technical Stack
+
+- **Framework**: Next.js 14
+- **Language**: TypeScript 5.2
+- **Styling**: Bootstrap 5.3 & React-Bootstrap
+- **Mapping**: React Leaflet
+- **Data Visualization**: Custom Sky Map implementation
+- **API Integration**: NASA NeoWs (Near Earth Object Web Service)
+
+## Prerequisites
+
+- Node.js (version 18.17 or higher)
+- npm (version 9 or higher)
+- A NASA API key (get one at https://api.nasa.gov)
+
+## Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/yourusername/demo-nasa.git
+cd demo-nasa
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Create your environment file:
+```bash
+cp .env.example .env.local
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Edit `.env.local` and add your NASA API key:
+```bash
+NEXT_PUBLIC_NASA_API_KEY=your_nasa_api_key_here
+```
 
-## Learn More
+5. Start the development server:
+```bash
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+6. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Features
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- 🌍 Interactive Earth map showing NEO positions
+- 📊 Real-time data from NASA's NeoWs API
+- 🔍 Detailed information about each asteroid
+- ⚠️ Visual indicators for potentially hazardous objects
+- 📱 Responsive design for all device sizes
 
-## Deploy on Vercel
+## Version History
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Version 1.0.0
+- Initial release
+- Earth map visualization
+- NEO data table
+- Basic responsive design
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Project Structure
+
+```
+demo-nasa/
+├── src/
+│   ├── components/     # React components
+│   ├── hooks/         # Custom React hooks
+│   ├── services/      # API services
+│   ├── types/         # TypeScript definitions
+│   └── pages/         # Next.js pages
+├── public/            # Static assets
+└── styles/           # Global styles
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch: `git checkout -b feature/my-new-feature`
+3. Commit your changes: `git commit -am 'Add some feature'`
+4. Push to the branch: `git push origin feature/my-new-feature`
+5. Submit a pull request
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- NASA NeoWs API
+- OpenStreetMap contributors
+- React Leaflet team
